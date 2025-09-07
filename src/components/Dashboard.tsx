@@ -1,28 +1,9 @@
 import React from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
-import { Badge } from "@/components/ui/badge";
 import { Checkbox } from "@/components/ui/checkbox";
-import { Separator } from "@/components/ui/separator";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
-import {
-  CalendarIcon,
-  CheckCircle,
-  CheckCircle2,
-  Crown,
-  Flame,
-  Medal,
-  Star,
-  Trophy,
-  TrendingUp,
-} from "lucide-react";
+import { CheckCircle, CheckCircle2, Crown, Flame, Medal, Star, Trophy, TrendingUp } from "lucide-react";
 
 interface HabitStreak {
   id: string;

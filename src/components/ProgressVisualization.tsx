@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Progress } from "@/components/ui/progress";
@@ -39,8 +39,6 @@ interface HabitStreak {
 }
 
 const ProgressVisualization = () => {
-  const [activeTab, setActiveTab] = useState("streaks");
-
   // Mock data for habit streaks
   const habitStreaks: HabitStreak[] = [
     {
@@ -141,7 +139,6 @@ const ProgressVisualization = () => {
       <Tabs
         defaultValue="streaks"
         className="w-full"
-        onValueChange={setActiveTab}
       >
         <TabsList className="grid grid-cols-3 mb-6">
           <TabsTrigger value="streaks" className="flex items-center gap-2">

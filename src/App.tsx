@@ -4,13 +4,15 @@ import Home from "./components/home";
 import routes from "tempo-routes";
 
 function App() {
+  const tempoRoutes = useRoutes(routes);
+  
   return (
     <Suspense fallback={<p>Loading...</p>}>
       <>
         <Routes>
           <Route path="/" element={<Home />} />
         </Routes>
-        {import.meta.env.VITE_TEMPO === "true" && useRoutes(routes)}
+        {import.meta.env.VITE_TEMPO === "true" && tempoRoutes}
       </>
     </Suspense>
   );
