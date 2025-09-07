@@ -2,6 +2,7 @@ import '@testing-library/jest-dom'
 import { beforeAll, afterEach, afterAll } from 'vitest'
 import { cleanup } from '@testing-library/react'
 import { setupServer } from 'msw/node'
+import { handlers } from './mocks/handlers'
 
 // Clean up after each test
 afterEach(() => {
@@ -11,12 +12,17 @@ afterEach(() => {
 // Mock server setup for API testing
 export const server = setupServer()
 
+// Register default handlers
+server.use(...handlers)
+
 beforeAll(() => {
   server.listen({ onUnhandledRequest: 'error' })
 })
 
 afterEach(() => {
   server.resetHandlers()
+  // Re-apply default handlers after reset
+  server.use(...handlers)
 })
 
 afterAll(() => {
@@ -39,6 +45,7 @@ Object.defineProperty(window, 'matchMedia', {
 })
 
 // Mock IntersectionObserver
+// @ts-ignore
 global.IntersectionObserver = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),
   unobserve: vi.fn(),
@@ -46,6 +53,7 @@ global.IntersectionObserver = vi.fn().mockImplementation(() => ({
 }))
 
 // Mock ResizeObserver
+// @ts-ignore
 global.ResizeObserver = vi.fn().mockImplementation(() => ({
   observe: vi.fn(),
   unobserve: vi.fn(),

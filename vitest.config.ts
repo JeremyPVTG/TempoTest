@@ -8,11 +8,22 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'happy-dom',
-    setupFiles: ['./src/test/setup.ts'],
+    setupFiles: ['./src/test/setup.ts', './vitest.setup.ts'],
     css: true,
     coverage: {
       provider: 'v8',
-      reporter: ['text', 'json', 'html'],
+      all: true,
+      include: ['src/**/*.{ts,tsx}'],
+      exclude: [
+        '**/*.stories.*',
+        'src/stories/**',
+        '**/*.config.*',
+        '**/vitest.*',
+        'src/components/ui/**',
+        'src/main.tsx',
+        'src/App.tsx'
+      ],
+      reporter: ['text', 'json', 'html', 'lcov'],
       thresholds: {
         global: {
           branches: 60,

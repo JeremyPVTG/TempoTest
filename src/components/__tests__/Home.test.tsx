@@ -7,6 +7,11 @@ describe('Home Component', () => {
     render(<Home />)
     expect(screen.getByText('HabitQuest')).toBeInTheDocument()
   })
+  
+  it('confirms testing infrastructure is working', () => {
+    render(<Home />)
+    expect(screen.getByText('HabitQuest')).toBeInTheDocument()
+  })
 
   it('displays the main header', () => {
     render(<Home />)
