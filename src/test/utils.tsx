@@ -1,18 +1,14 @@
+/* eslint-disable react-refresh/only-export-components */
 import React, { ReactElement } from 'react'
 import { render, RenderOptions } from '@testing-library/react'
 import { BrowserRouter } from 'react-router-dom'
 
-interface CustomRenderOptions extends Omit<RenderOptions, 'wrapper'> {
-  initialEntries?: string[]
-}
+interface CustomRenderOptions extends Omit<RenderOptions, 'wrapper'> {}
 
 // Custom render function with providers
 function customRender(
   ui: ReactElement,
-  {
-    initialEntries = ['/'],
-    ...renderOptions
-  }: CustomRenderOptions = {}
+  renderOptions: CustomRenderOptions = {}
 ) {
   function Wrapper({ children }: { children: React.ReactNode }) {
     return (

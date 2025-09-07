@@ -5,6 +5,7 @@ import { cva } from "class-variance-authority"
 
 import { cn } from "@/lib/utils"
 
+/* eslint-disable react-refresh/only-export-components */
 const NavigationMenu = React.forwardRef<
   React.ElementRef<typeof NavigationMenuPrimitive.Root>,
   React.ComponentPropsWithoutRef<typeof NavigationMenuPrimitive.Root>

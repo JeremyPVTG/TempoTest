@@ -97,7 +97,7 @@
   "lint-staged": {
     "*.{ts,tsx}": [
       "npm run lint",
-      "npm run test:run"
+      "bash -lc 'npm run test:run'"
     ]
   }
 }
