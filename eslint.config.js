@@ -1,20 +1,14 @@
-import js from '@eslint/js'
-import globals from 'globals'
-import reactHooks from 'eslint-plugin-react-hooks'
-import reactRefresh from 'eslint-plugin-react-refresh'
-import tseslint from '@typescript-eslint/eslint-plugin'
-import tsparser from '@typescript-eslint/parser'
-
-export default [
+/** @type {import('eslint').Linter.Config[]} */
+module.exports = [
   {
-    ignores: ['dist', 'coverage', 'src/stories'],
+    ignores: ['dist', 'coverage', 'apps/**/coverage', 'src/stories', 'apps/**/src/stories'],
   },
   {
     files: ['**/*.{ts,tsx}'],
     languageOptions: {
       ecmaVersion: 2020,
-      globals: globals.browser,
-      parser: tsparser,
+      globals: require('globals').browser,
+      parser: require('@typescript-eslint/parser'),
       parserOptions: {
         ecmaVersion: 'latest',
         sourceType: 'module',
@@ -24,12 +18,12 @@ export default [
       },
     },
     plugins: {
-      'react-hooks': reactHooks,
-      'react-refresh': reactRefresh,
-      '@typescript-eslint': tseslint,
+      'react-hooks': require('eslint-plugin-react-hooks'),
+      'react-refresh': require('eslint-plugin-react-refresh'),
+      '@typescript-eslint': require('@typescript-eslint/eslint-plugin'),
     },
     rules: {
-      ...reactHooks.configs.recommended.rules,
+      ...require('eslint-plugin-react-hooks').configs.recommended.rules,
       'react-refresh/only-export-components': [
         'warn',
         { allowConstantExport: true },

@@ -1,0 +1,5 @@
+
+> @habituals/web@0.0.0 lint /Users/jeremy/Habituals2/TempoTest/apps/web
+> eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0
+
+ ELIFECYCLE  Command failed with exit code 2.

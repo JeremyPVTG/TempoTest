@@ -1,0 +1,22 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-native",
+    "strict": true,
+    "baseUrl": ".",
+    "paths": {
+      "@habituals/data": [
+        "../../packages/data/src"
+      ],
+      "@habituals/domain/*": [
+        "../../packages/domain/src/*"
+      ]
+    }
+  },
+  "include": [
+    "app",
+    "src",
+    "expo-env.d.ts",
+    ".expo/types/**/*.ts"
+  ]
+}

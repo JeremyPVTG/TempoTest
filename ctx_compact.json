@@ -1,0 +1,60 @@
+{
+  "overview": "Expo SDK 53 mobile app with AsyncStorage offline queue, expo-router, RevenueCat integration",
+  "files": {
+    "apps/mobile/package.json": {
+      "purpose": "Expo SDK 53 dependencies and scripts",
+      "risk": "dependency version conflicts",
+      "tests": "workspace integration"
+    },
+    "apps/mobile/app.config.ts": {
+      "purpose": "Expo configuration with typed routes",
+      "risk": "environment variable access",
+      "tests": "config validation"
+    },
+    "apps/mobile/metro.config.js": {
+      "purpose": "Monorepo symlink resolution",
+      "risk": "workspace package resolution",
+      "tests": "import resolution"
+    },
+    "apps/mobile/app/_layout.tsx": {
+      "purpose": "Root layout with providers",
+      "risk": "provider initialization order",
+      "tests": "provider mounting"
+    },
+    "packages/data/src/offlineQueue/storage/asyncStorageDriver.ts": {
+      "purpose": "Shared AsyncStorage driver",
+      "risk": "JSON parse errors, storage failures",
+      "tests": "read/write/clear, error handling"
+    },
+    "apps/mobile/src/hooks/useStorefront.ts": {
+      "purpose": "RevenueCat integration hook",
+      "risk": "platform API key handling, entitlement parsing",
+      "tests": "offerings load, purchase flows"
+    },
+    "apps/mobile/src/lib/data.ts": {
+      "purpose": "Data layer with DI queue integration",
+      "risk": "queue enqueue function binding",
+      "tests": "mutation queueing"
+    }
+  },
+  "environments": {
+    "EXPO_PUBLIC_SUPABASE_URL": "required",
+    "EXPO_PUBLIC_SUPABASE_ANON_KEY": "required",
+    "EXPO_PUBLIC_RC_API_KEY_IOS": "required",
+    "EXPO_PUBLIC_RC_API_KEY_ANDROID": "required"
+  },
+  "risks": [
+    "Metro configuration monorepo resolution",
+    "AsyncStorage JSON parse safety",
+    "RevenueCat platform key selection",
+    "Offline queue sync boundary timing",
+    "TypeScript strict mode compliance"
+  ],
+  "targets": [
+    "AsyncStorageDriver unit tests",
+    "useStorefront hook tests",
+    "Home screen integration",
+    "Paywall purchase flow",
+    "Store consumable purchases"
+  ]
+}

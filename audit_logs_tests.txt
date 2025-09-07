@@ -1,0 +1,23 @@
+
+> @habituals/web@0.0.0 test:run /Users/jeremy/Habituals2/TempoTest/apps/web
+> vitest run "--" "--coverage"
+
+
+ RUN  v3.2.4 /Users/jeremy/Habituals2/TempoTest/apps/web
+
+ ✓ src/test/__tests__/mswHandlers.test.ts (3 tests) 12ms
+ ✓ src/test/__tests__/utils.test.tsx (3 tests) 3ms
+ ✓ src/components/__tests__/ui.badge.test.tsx (3 tests) 13ms
+ ✓ src/components/__tests__/ui.button.test.tsx (2 tests) 19ms
+ ✓ src/components/__tests__/ui.textarea.test.tsx (2 tests) 15ms
+ ✓ src/components/__tests__/ProgressVisualization.test.tsx (3 tests) 106ms
+ ✓ src/components/__tests__/Dashboard.simple.test.tsx (10 tests) 167ms
+ ✓ src/components/__tests__/Home.test.tsx (6 tests) 151ms
+ ✓ src/components/__tests__/AICoach.test.tsx (3 tests) 1106ms
+   ✓ AICoach > submits user prompt, receives AI response and shows plan modal  1052ms
+
+ Test Files  9 passed (9)
+      Tests  35 passed (35)
+   Start at  20:29:10
+   Duration  2.22s (transform 349ms, setup 2.20s, collect 1.18s, tests 1.59s, environment 1.68s, prepare 1.65s)
+

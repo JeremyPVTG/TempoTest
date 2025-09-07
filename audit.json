@@ -1,0 +1,63 @@
+{
+  "classification": "monorepo",
+  "workspaces": ["apps/*", "packages/*"],
+  "packages": [
+    {
+      "path": "apps/web",
+      "name": "@habituals/web",
+      "private": true,
+      "scripts": {
+        "dev": "vite",
+        "build": "tsc -b && vite build",
+        "test": "vitest --run"
+      },
+      "framework": { "vite": "^6.2.3", "expo": null, "next": null },
+      "tsconfig": { "module": "ESNext", "moduleResolution": "Bundler", "target": "ES2020", "paths": {} },
+      "loc": { "ts": 595, "tsx": 7465, "js": 729, "json": 9118, "svg": 1, "css": 530, "total": 18438 },
+      "tests": { "framework": "vitest", "count": 35, "passed": 35, "coverage": { "statements": 86.25, "lines": 86.25, "functions": 81.81, "branches": 96.66 } }
+    },
+    {
+      "path": "packages/domain",
+      "name": "@habituals/domain",
+      "private": false,
+      "scripts": { "build": "tsc -b", "test": "vitest --run" },
+      "framework": { "vite": null, "expo": null, "next": null },
+      "tsconfig": { "module": "ESNext", "moduleResolution": "Bundler", "target": "ES2020", "paths": {} },
+      "loc": { "ts": 1, "tsx": 0, "js": 0, "json": 0, "svg": 0, "css": 0, "total": 1 },
+      "tests": { "framework": null, "count": 0, "passed": 0, "coverage": { "statements": 0, "lines": 0, "functions": 0, "branches": 0 } }
+    },
+    {
+      "path": "packages/data",
+      "name": "@habituals/data",
+      "private": false,
+      "scripts": { "build": "tsc -b", "test": "vitest --run" },
+      "framework": { "vite": null, "expo": null, "next": null },
+      "tsconfig": { "module": "ESNext", "moduleResolution": "Bundler", "target": "ES2020", "paths": {} },
+      "loc": { "ts": 1, "tsx": 0, "js": 0, "json": 0, "svg": 0, "css": 0, "total": 1 },
+      "tests": { "framework": null, "count": 0, "passed": 0, "coverage": { "statements": 0, "lines": 0, "functions": 0, "branches": 0 } }
+    }
+  ],
+  "supabase": { "present": false, "migrations": [], "rlsPolicies": [], "envVars": [] },
+  "analytics": { "posthogWrapperFound": false, "rawImports": [] },
+  "iap": { "revenuecat": false },
+  "risks": [
+    "Turbo config uses deprecated 'pipeline' field; should be 'tasks' (build fails)",
+    "ESLint root config ESM not loading when linting from app workspace"
+  ],
+  "recommendation": {
+    "migrateToTurborepo": true,
+    "reasons": [
+      "Phase 3 requires shared packages for domain/data",
+      "Future apps/mobile (Expo) will benefit from a monorepo",
+      "Centralized build/test pipelines via Turbo"
+    ],
+    "steps": [
+      "Rename turbo.json pipeline->tasks",
+      "Ensure root eslint config is compatible with workspaces (ESM or CJS)",
+      "Implement @habituals/data client, repos, hooks",
+      "Add CI jobs for unit/contract/RLS/E2E",
+      "Generate Supabase types and wire env management",
+      "Add analytics wrapper and lint rule to ban raw imports"
+    ]
+  }
+}

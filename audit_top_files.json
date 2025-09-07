@@ -1,0 +1,62 @@
+[
+  {
+    "f": "package-lock.json",
+    "l": 8755
+  },
+  {
+    "f": "pnpm-lock.yaml",
+    "l": 6009
+  },
+  {
+    "f": "apps/web/coverage/lcov-report/src/components/ProgressVisualization.tsx.html",
+    "l": 1204
+  },
+  {
+    "f": "apps/web/coverage/src/components/ProgressVisualization.tsx.html",
+    "l": 1204
+  },
+  {
+    "f": "coverage/lcov-report/src/components/ProgressVisualization.tsx.html",
+    "l": 1204
+  },
+  {
+    "f": "coverage/src/components/ProgressVisualization.tsx.html",
+    "l": 1204
+  },
+  {
+    "f": "coverage/lcov.info",
+    "l": 1122
+  },
+  {
+    "f": "apps/web/coverage/lcov.info",
+    "l": 1121
+  },
+  {
+    "f": "apps/web/coverage/lcov-report/src/components/AICoach.tsx.html",
+    "l": 1012
+  },
+  {
+    "f": "apps/web/coverage/src/components/AICoach.tsx.html",
+    "l": 1012
+  },
+  {
+    "f": "coverage/lcov-report/src/components/AICoach.tsx.html",
+    "l": 1012
+  },
+  {
+    "f": "coverage/src/components/AICoach.tsx.html",
+    "l": 1012
+  },
+  {
+    "f": "apps/web/coverage/lcov-report/src/components/Dashboard.tsx.html",
+    "l": 937
+  },
+  {
+    "f": "apps/web/coverage/src/components/Dashboard.tsx.html",
+    "l": 937
+  },
+  {
+    "f": "coverage/lcov-report/src/components/Dashboard.tsx.html",
+    "l": 937
+  }
+]
